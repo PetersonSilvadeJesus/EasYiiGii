@@ -68,7 +68,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
      */
     public function getName()
     {
-        return 'Easy Gii (CRUD)';
+        return 'EasYii Gii (CRUD)';
     }
 
     /**

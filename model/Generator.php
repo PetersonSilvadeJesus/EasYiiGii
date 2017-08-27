@@ -65,7 +65,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
      * @inheritdoc
      */
     public function getName() {
-        return 'Easy Gii (Model)';
+        return 'EasYii Gii (Model)';
     }
 
     /**
