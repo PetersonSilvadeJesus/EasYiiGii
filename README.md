@@ -1,15 +1,6 @@
-# yii2-extremely-improved-gii
+# Easyii Gii
 Yii2 Gii (generator) with Relation person to PostgreSQL
 
-[![Latest Stable Version](https://poser.pugx.org/thtmorais/yii2-enhanced-gii/v/stable)](https://packagist.org/packages/thtmorais/yii2-enhanced-gii)
-[![License](https://poser.pugx.org/thtmorais/yii2-enhanced-gii/license)](https://packagist.org/packages/thtmorais/yii2-enhanced-gii)
-[![Total Downloads](https://poser.pugx.org/thtmorais/yii2-enhanced-gii/downloads)](https://packagist.org/packages/thtmorais/yii2-enhanced-gii)
-[![Monthly Downloads](https://poser.pugx.org/thtmorais/yii2-enhanced-gii/d/monthly)](https://packagist.org/packages/thtmorais/yii2-enhanced-gii)
-[![Daily Downloads](https://poser.pugx.org/thtmorais/yii2-enhanced-gii/d/daily)](https://packagist.org/packages/thtmorais/yii2-enhanced-gii)
-[![Join the chat at https://gitter.im/thtmorais/yii2-enhanced-gii](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thtmorais/yii2-enhanced-gii?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
-[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
@@ -17,22 +8,17 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-$ composer require thtmorais/yii2-enhanced-gii:dev-master
+$ composer require thtmorais/easyiigii:dev-master
 ```
 
 or add
 
 ```
-"thtmorais/yii2-enhanced-gii": "dev-master",
-"kartik-v/yii2-mpdf": "dev-master",
+"thtmorais/easyiigii": "dev-master",
 ```
->add `"kartik-v/yii2-mpdf": "dev-master",` if you want to use pdf exporter 
-
->add `"kartik-v/yii2-tree-manager": "dev-master",` if you want to use tree/nested relation table
 
 to the `require` section of your `composer.json` file.
 
-> I separate the mpdf & tree-manager because the package is big & not everyone will use it.
 
 Then you must add this code at your config\main.php.
 
@@ -60,6 +46,7 @@ Go to your gii tools, and notice the new IO Generator for models & CRUD
 2. Generate Timestamp Behaviors
 3. Generate Blameable Behavior
 4. Generate UUID Behavior
+5. Generate validations for e-mail, CPF/CNPJ
 
 ## CRUD :
 1. Generate all CRUD with wildcard (*) of table
@@ -71,6 +58,7 @@ Go to your gii tools, and notice the new IO Generator for models & CRUD
 7. Set pluralize or not
 8. PDF Printable view
 9. Expandable / collapsible row at index grid view for related data
+10. Views with or without TabularForms
 
 ## Migration Generator :
 1. Generate migration from your database structure (based on : https://github.com/deesoft/yii2-gii)
@@ -118,3 +106,4 @@ I'm open for any improvement
 2. kartik-v (https://github.com/kartik-v) for most of widgets
 3. schmunk42 (https://github.com/schmunk42) for bootstrap & model base & extension
 4. mdmunir (https://github.com/mdmunir) for JsBlock & Migration Generator (from https://github.com/deesoft/yii2-gii)
+5. mootensai(https://github.com/mootensai) for yii2-enhanced-gii(https://github.com/mootensai/yii2-enhanced-gii)

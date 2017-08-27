@@ -6,16 +6,16 @@
     "type": "yii2-extension",
     "authors": [
         {
+            "name": "Matheus Evangelista Morais",
+            "email": "thtmorais@hotmail.com"
+        },
+        {
             "name": "Yohanes Candrajaya",
             "email": "moo.tensai@gmail.com"
         },
         {
             "name": "Jiwantoro Ndaru",
             "email": "jiwanndaru@gmail.com"
-        },
-        {
-            "name": "Matheus Evangelista Morais",
-            "email": "thtmorais@hotmail.com"
         }
     ],
     "require": {
@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "thtmorais\\E?asyii-Gii\\": ""
+            "thtmorais\\easyiigii\\": ""
         }
     },
     "extra": {

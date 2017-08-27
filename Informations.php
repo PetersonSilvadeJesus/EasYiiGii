@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Computação
- * Date: 26/01/2017
- * Time: 13:05
- */
 
 namespace thtmorais\easyiigii;
 
