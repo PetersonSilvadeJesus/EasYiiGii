@@ -37,7 +37,7 @@ See gridview settings on http://demos.krajee.com/grid#module
 See datecontrol settings on http://demos.krajee.com/datecontrol#module
 
 ## Usage :
-Go to your gii tools, and notice the new IO Generator for models & CRUD
+Go to your gii tools, and notice the new Easy Gii Generator for models & CRUD
 
 
 #Features

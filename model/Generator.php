@@ -28,6 +28,7 @@ use yii\helpers\Inflector;
  * @property TableSchema $tableSchema The TableSchema of this model.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author Matheus Evangelista Morais <thtmorais@hotmail.com>
  * @since 2.0
  */
 class Generator extends \thtmorais\easyiigii\BaseGenerator {
@@ -64,7 +65,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
      * @inheritdoc
      */
     public function getName() {
-        return 'IO Generator (Model)';
+        return 'Easy Gii (Model)';
     }
 
     /**
