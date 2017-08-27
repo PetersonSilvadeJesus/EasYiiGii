@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Yohanes
- * Date: 14-Jun-16
- * Time: 3:56 PM
- */
 
 namespace thtmorais\easyiigii;
 

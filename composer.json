@@ -25,8 +25,8 @@
         "kartik-v/yii2-widgets": "*",
         "kartik-v/yii2-export": "*",
         "kartik-v/yii2-datecontrol": "*",
-        "webvimark/module-user-management": "^1",
-        "arogachev/yii2-many-to-many": "0.2.*",
+        "webvimark/module-user-management": "*",
+        "arogachev/yii2-many-to-many": "*",
         "yiibr/yii2-br-validator": "*",
         "yii-dream-team/yii2-upload-behavior": "*"
     },
