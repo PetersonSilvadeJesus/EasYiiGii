@@ -1781,23 +1781,23 @@
             "time": "2014-11-09 19:54:17"
         },
         {
-            "name": "mootensai/yii2-jsblock",
+            "name": "thtmorais/yii2-jsblock",
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mootensai/yii2-jsblock.git",
+                "url": "https://github.com/thtmorais/yii2-jsblock.git",
                 "reference": "d27864ba27760ffa634c01081f3e47ebddace9d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mootensai/yii2-jsblock/zipball/d27864ba27760ffa634c01081f3e47ebddace9d5",
+                "url": "https://api.github.com/repos/thtmorais/yii2-jsblock/zipball/d27864ba27760ffa634c01081f3e47ebddace9d5",
                 "reference": "d27864ba27760ffa634c01081f3e47ebddace9d5",
                 "shasum": ""
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "mootensai\\components\\": ""
+                    "thtmorais\\components\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1816,16 +1816,16 @@
             "time": "2015-06-27 03:49:10"
         },
         {
-            "name": "mootensai/yii2-optimistic-lock-validator",
+            "name": "thtmorais/yii2-optimistic-lock-validator",
             "version": "0.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mootensai/yii2-optimistic-lock-validator.git",
+                "url": "https://github.com/thtmorais/yii2-optimistic-lock-validator.git",
                 "reference": "422b012a87973bb296080f3572e1e45c7643a31a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mootensai/yii2-optimistic-lock-validator/zipball/422b012a87973bb296080f3572e1e45c7643a31a",
+                "url": "https://api.github.com/repos/thtmorais/yii2-optimistic-lock-validator/zipball/422b012a87973bb296080f3572e1e45c7643a31a",
                 "reference": "422b012a87973bb296080f3572e1e45c7643a31a",
                 "shasum": ""
             },
@@ -1835,7 +1835,7 @@
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "mootensai\\components\\": ""
+                    "thtmorais\\components\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1864,16 +1864,16 @@
             "time": "2015-08-15 03:27:57"
         },
         {
-            "name": "mootensai/yii2-relation-trait",
+            "name": "thtmorais/yii2-relation-trait",
             "version": "1.0.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mootensai/yii2-relation-trait.git",
+                "url": "https://github.com/thtmorais/yii2-relation-trait.git",
                 "reference": "702a3ad747735ca957eb98ce17021babae9882ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mootensai/yii2-relation-trait/zipball/702a3ad747735ca957eb98ce17021babae9882ff",
+                "url": "https://api.github.com/repos/thtmorais/yii2-relation-trait/zipball/702a3ad747735ca957eb98ce17021babae9882ff",
                 "reference": "702a3ad747735ca957eb98ce17021babae9882ff",
                 "shasum": ""
             },
@@ -1884,7 +1884,7 @@
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "mootensai\\relation\\": ""
+                    "thtmorais\\relation\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "Yii 2 Models load with relation, & transaction save with relation",
-            "homepage": "http://github.com/mootensai/yii2-relation-trait",
+            "homepage": "http://github.com/thtmorais/yii2-relation-trait",
             "keywords": [
                 "load",
                 "loadall",
@@ -1914,16 +1914,16 @@
             "time": "2016-02-17 06:20:51"
         },
         {
-            "name": "mootensai/yii2-uuid-behavior",
+            "name": "thtmorais/yii2-uuid-behavior",
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mootensai/yii2-uuid-behavior.git",
+                "url": "https://github.com/thtmorais/yii2-uuid-behavior.git",
                 "reference": "aaeb5c6268e77647af48ddc4757c5cb3fb726e55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mootensai/yii2-uuid-behavior/zipball/aaeb5c6268e77647af48ddc4757c5cb3fb726e55",
+                "url": "https://api.github.com/repos/thtmorais/yii2-uuid-behavior/zipball/aaeb5c6268e77647af48ddc4757c5cb3fb726e55",
                 "reference": "aaeb5c6268e77647af48ddc4757c5cb3fb726e55",
                 "shasum": ""
             },
@@ -1938,7 +1938,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "mootensai\\behaviors\\": ""
+                    "thtmorais\\behaviors\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1958,7 +1958,7 @@
                 }
             ],
             "description": "Set UUID before save on Yii 2 models",
-            "homepage": "http://github.com/mootensai/yii2-uuid-behavior",
+            "homepage": "http://github.com/thtmorais/yii2-uuid-behavior",
             "keywords": [
                 "before",
                 "beforesave",

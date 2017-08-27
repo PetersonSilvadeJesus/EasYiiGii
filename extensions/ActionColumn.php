@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace mootensai\enhancedgii\extensions;
+namespace thtmorais\EasyiiGii\extensions;
 
 use Yii;
 use yii\grid\Column;

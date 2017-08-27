@@ -4,7 +4,7 @@ use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
 $urlParams = $generator->generateUrlParams();
-$information = new \mootensai\enhancedgii\Informations();
+$information = new \thtmorais\EasyiiGii\Informations();
 $tableSchema = $generator->getTableSchema();
 $pk = empty($tableSchema->primaryKey) ? $tableSchema->getColumnNames()[0] : $tableSchema->primaryKey[0];
 $fk = $generator->generateFK($tableSchema);

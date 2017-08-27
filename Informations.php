@@ -6,7 +6,7 @@
  * Time: 13:05
  */
 
-namespace mootensai\enhancedgii;
+namespace thtmorais\EasyiiGii;
 
 
 class Informations

@@ -4,7 +4,7 @@ use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
-/* @var $generator mootensai\enhancedgii\crud\Generator */
+/* @var $generator thtmorais\EasyiiGii\crud\Generator */
 
 $fk = $generator->generateFK();
 

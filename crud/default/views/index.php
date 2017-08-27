@@ -4,7 +4,7 @@ use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
-/* @var $generator \mootensai\enhancedgii\crud\Generator */
+/* @var $generator \thtmorais\EasyiiGii\crud\Generator */
 
 $urlParams = $generator->generateUrlParams();
 $nameAttribute = $generator->getNameAttribute();
@@ -90,7 +90,7 @@ if ($generator->indexWidgetType === 'grid'):
             endif;
         endforeach; ?>
         [
-            'class' => 'mootensai\enhancedgii\extensions\ActionColumn',
+            'class' => 'thtmorais\EasyiiGii\extensions\ActionColumn',
 <?php if($generator->saveAsNew): ?>
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
