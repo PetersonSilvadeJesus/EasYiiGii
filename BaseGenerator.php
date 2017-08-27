@@ -6,7 +6,7 @@
  * Time: 3:56 PM
  */
 
-namespace thtmorais\EasyiiGii;
+namespace thtmorais\easyiigii;
 
 use Yii;
 use yii\base\NotSupportedException;

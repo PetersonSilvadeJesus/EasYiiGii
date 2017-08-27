@@ -3,7 +3,7 @@
 use yii\helpers\StringHelper;
 
 $dbName = $generator->getDbConnection()->driverName;
-$information = new \thtmorais\EasyiiGii\Informations();
+$information = new \thtmorais\easyiigii\Informations();
 $controllerClass = StringHelper::basename($generator->controllerClass);
 $modelClass = StringHelper::basename($generator->modelClass);
 $searchModelClass = StringHelper::basename($generator->searchModelClass);

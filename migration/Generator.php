@@ -1,6 +1,6 @@
 <?php
 
-namespace thtmorais\EasyiiGii\migration;
+namespace thtmorais\easyiigii\migration;
 
 use Yii;
 use yii\db\Connection;

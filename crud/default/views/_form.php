@@ -3,10 +3,10 @@
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
-$information = new \thtmorais\EasyiiGii\Informations();
+$information = new \thtmorais\easyiigii\Informations();
 
 /* @var $this yii\web\View */
-/* @var $generator \thtmorais\EasyiiGii\crud\Generator */
+/* @var $generator \thtmorais\easyiigii\crud\Generator */
 /* @var $relations array */
 $tableSchema = $generator->getTableSchema();
 $fk = $generator->generateFK($tableSchema);

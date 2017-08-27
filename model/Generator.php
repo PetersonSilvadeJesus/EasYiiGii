@@ -6,9 +6,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace thtmorais\EasyiiGii\model;
+namespace thtmorais\easyiigii\model;
 
-use thtmorais\EasyiiGii\Informations;
+use thtmorais\easyiigii\Informations;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\db\Schema;
@@ -30,7 +30,7 @@ use yii\helpers\Inflector;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Generator extends \thtmorais\EasyiiGii\BaseGenerator {
+class Generator extends \thtmorais\easyiigii\BaseGenerator {
 
     /* @var $tableSchema TableSchema */
 

@@ -6,7 +6,7 @@
  * Time: 13:05
  */
 
-namespace thtmorais\EasyiiGii;
+namespace thtmorais\easyiigii;
 
 
 class Informations
