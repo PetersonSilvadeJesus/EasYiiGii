@@ -1,39 +1,14 @@
 <?php
 
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
 namespace thtmorais\easyiigii\model;
 
 use thtmorais\easyiigii\Informations;
 use Yii;
-use yii\base\NotSupportedException;
-use yii\db\Schema;
-use yii\db\TableSchema;
 use yii\db\ActiveQuery;
 use yii\gii\CodeFile;
 use yii\helpers\Inflector;
 
-/**
- * Generates CRUD
- *
- * @property array $columnNames Model column names. This property is read-only.
- * @property string $controllerID The controller ID (without the module ID prefix). This property is
- * read-only.
- * @property array $searchAttributes Searchable attributes. This property is read-only.
- * @property string $viewPath The controller view path. This property is read-only.
- * @property TableSchema $tableSchema The TableSchema of this model.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @author Matheus Evangelista Morais <thtmorais@hotmail.com>
- * @since 2.0
- */
 class Generator extends \thtmorais\easyiigii\BaseGenerator {
-
-    /* @var $tableSchema TableSchema */
 
     public $nsModel = 'app\models';
     public $nameAttribute = 'name, title, username';
@@ -61,23 +36,14 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
     public $generateBaseOnly = false;
     public $relNxN;
 
-    /**
-     * @inheritdoc
-     */
     public function getName() {
         return 'EasYii Gii (Model)';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getDescription() {
         return 'This generator generates model operations for the database.';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules() {
         return array_merge(parent::rules(), [
             [['db', 'nsModel', 'tableName', 'modelClass', 'queryNs','relNxN'], 'filter', 'filter' => 'trim'],
@@ -100,9 +66,6 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
         ]);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels() {
         return array_merge(parent::attributeLabels(), [
             'db' => 'Database Connection ID',
@@ -117,17 +80,11 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
             'nsSearchModel' => 'Search Model Namespace',
             'UUIDColumn' => 'UUID Column',
             'viewPath' => 'View Path',
-            'relNxN'=>'Relation NxN',
-//            'baseControllerClass' => 'Base Controller Class',
-//            'indexWidgetType' => 'Widget Used in Index Page',
-//            'searchModelClass' => 'Search Model Class',
+            'relNxN'=>'NxM Relations',
             'generateBaseOnly' => 'Generate Base Model Only',
         ]);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function hints() {
         return array_merge(parent::hints(), [
             'db' => 'This is the ID of the DB application component.',
@@ -138,7 +95,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
                 will be generated, one for each matching table name; and the class names will be generated from
                 the matching characters. For example, table <code>tbl_post</code> will generate <code>Post</code>
                 class.',
-            'relNxN'=>'Separate the tables by ";"',
+            'relNxN'=>'If you want to generate NxM relationships with Select2 and TabularForm, enter the name of the tables by separating them with a comma.',
             'nameAttribute' => 'This is the (set) of name column that you use to show as label, '
             . 'separated by comma (,) for multiple table(asterisk on Table Name).',
             'skippedColumns' => 'Fill this field with the column name that you dont want to generate form & labels for the table. 
@@ -156,9 +113,6 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
                 if "Table Name" ends with asterisk, in which case multiple ActiveRecord classes will be generated.',
             'baseModelClass' => 'This is the base class of the new ActiveRecord class. It should be a fully qualified namespaced class name.',
             'nsSearchModel' => 'This is the namespace of the search model class to be generated, e.g., <code>app\models</code>',
-//            'searchModelClass' => 'This is the name of the search class to be generated. The class name should not contain
-//                the namespace part as it is specified in "Search Model Namespace". You do not need to specify the class name
-//                if "Table Name" ends with asterisk, in which case multiple search model classes will be generated.',
             'generateQuery' => 'This indicates whether to generate ActiveQuery for the ActiveRecord class.',
             'generateLabelsFromComments' => 'This indicates whether the generator should generate attribute labels
                 by using the comments of the corresponding DB columns.',
@@ -198,20 +152,10 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
             'deletedAt' => 'This indicates whether the generator should generate Soft Delete feature for Model. '
             . 'Enter this field with Updated By column name. '
             . 'Empty "Deleted By" & "Deleted At" field if you want to disable this feature.',
-//            'controllerClass' => 'This is the name of the Controller class to be generated. The class name should not contain
-//                the namespace part as it is specified in "Controller Namespace". You do not need to specify the class name
-//                if "Table Name" ends with asterisk, in which case multiple Controller classes will be generated.',
             'nsModel' => 'This is the namespace of the ActiveRecord class to be generated, e.g., <code>app\models</code>',
             'viewPath' => 'Specify the directory for storing the view scripts for the controller. You may use path alias here, e.g.,
                 <code>/var/www/basic/controllers/views/post</code>, <code>@app/views/post</code>. If not set, it will default
                 to <code>@app/views/ControllerID</code>',
-//            'baseControllerClass' => 'This is the class that the new CRUD controller class will extend from.
-//                You should provide a fully qualified class name, e.g., <code>yii\web\Controller</code>.',
-//            'skippedRelations' => 'Fill this field with the relation name that you dont want to generate CRUD for the table.
-//                You can fill multiple relations, separated by comma (,). You do not need to specify the class name
-//                if "Table Name" ends with asterisk, in which case all relations will be generated.',
-//            'indexWidgetType' => 'This is the widget type to be used in the index page to display list of the models.
-//                You may choose either <code>GridView</code> or <code>ListView</code>',
             'modelClass' => 'This is the name of the Model class to be generated. The class name should not contain
                 the namespace part as it is specified in "Model Namespace". You do not need to specify the class name
                 if "Table Name" ends with asterisk, in which case multiple ActiveRecord classes will be generated.',
@@ -225,14 +169,9 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
         ]);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function stickyAttributes() {
         return array_merge(parent::stickyAttributes(), [
             'db',
-//            'skippedColumns',
-//            'hiddenColumns',
             'nameAttribute',
             'nsModel',
             'nsSearchModel',
@@ -249,15 +188,9 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
             'deletedAt',
             'blameableValue',
             'UUIDColumn',
-//            'baseControllerClass',
-//            'indexWidgetType',
-//            'viewPath'
         ]);
     }
 
-    /**
-     * @return array
-     */
     public function getVariablesNxN()
     {
         $inf = new Informations();

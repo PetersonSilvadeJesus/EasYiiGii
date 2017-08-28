@@ -131,7 +131,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
             'expandable' => 'Expandable Index Grid View',
             'cancelable' => 'Add Cancel Button On Form',
             'pdf' => 'PDF Printable View',
-            'relNxN'=>'Relations'
+            'relNxN'=>'NxM Relations'
         ]);
     }
 
@@ -141,7 +141,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
     public function hints()
     {
         return array_merge(parent::hints(), [
-            'relNxN'=>'Separate the tables by <code>;</code>',
+            'relNxN'=>'If you want to generate NxM relationships with Select2 and TabularForm, enter the name of the tables by separating them with a comma.',
             'db' => 'This is the ID of the DB application component.',
             'tableName' => 'This is the name of the DB table that the new ActiveRecord class is associated with, e.g. <code>post</code>.
                 The table name may consist of the DB schema part if needed, e.g. <code>public.post</code>.
