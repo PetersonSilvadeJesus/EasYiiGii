@@ -1,10 +1,6 @@
 <?php
-/**
-     * This is the template for generating CRUD search class of the specified model.
-     */
 
 use yii\helpers\StringHelper;
-
 
 /* @var $this yii\web\View */
 /* @var $generator \thtmorais\easyiigii\model\Generator */

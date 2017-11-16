@@ -2,11 +2,12 @@
 
 namespace thtmorais\easyiigii\model;
 
-use thtmorais\easyiigii\Informations;
 use Yii;
 use yii\db\ActiveQuery;
 use yii\gii\CodeFile;
+use yii\helpers\Json;
 use yii\helpers\Inflector;
+use thtmorais\easyiigii\Informations;
 
 class Generator extends \thtmorais\easyiigii\BaseGenerator {
 
@@ -286,6 +287,28 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator {
         }
 
         return false;
+    }
+
+    public function relationships(){
+
+    $out = [];
+    if (isset($_POST['depdrop_parents'])) {
+        $id = end($_POST['depdrop_parents']);
+        $list = $this->tableSchema->foreignKeys;
+        //$list = Catequisando::find()->where(['id_comunidade'=>$id,'status'=>1])->select(['id','nome'])->asArray()->all();
+        $selected  = null;
+        if ($id != null && count($list) > 0) {
+            $selected = '';
+            foreach ($list as $i => $account) {
+                $out[] = ['id' => $account['id'], 'name' => $account['nome']];
+            }
+            // Shows how you can preselect a value
+            echo Json::encode(['output' => $out, 'selected'=>$selected]);
+            return;
+        }
+    }
+    echo Json::encode(['output' => '', 'selected'=>'']);
+
     }
 
 }

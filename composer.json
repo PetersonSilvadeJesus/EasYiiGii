@@ -28,7 +28,8 @@
         "webvimark/module-user-management": "*",
         "arogachev/yii2-many-to-many": "*",
         "yiibr/yii2-br-validator": "*",
-        "yii-dream-team/yii2-upload-behavior": "*"
+        "yii-dream-team/yii2-upload-behavior": "*",
+        "kartik-v/yii2-mpdf": "*"
     },
     "autoload": {
         "psr-4": {
