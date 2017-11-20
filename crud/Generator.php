@@ -24,7 +24,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
 {
 
     public $nameAttribute = 'name, title, username';
-    public $hiddenColumns = 'id, lock';
+    public $hiddenColumns;
     public $skippedColumns = 'created_at, updated_at, created_by, updated_by, deleted_at, deleted_by, created, modified, deleted';
     public $nsModel = 'app\models';
     public $nsSearchModel = 'app\models';
@@ -77,7 +77,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
     public function getDescription()
     {
         return 'This generator generates controller and views that implement CRUD (Create, Read, Update, Delete)
-            operations for the database.';
+            operations for the database. Required fields (*)';
     }
 
     /**
@@ -86,15 +86,14 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
     public function rules()
     {
         return array_merge(parent::rules(), [
-            [['db', 'nsModel', 'viewPath', 'queryNs', 'nsController', 'nsSearchModel', 'tableName', 'modelClass', 'searchModelClass', 'baseControllerClass','relNxN'], 'filter', 'filter' => 'trim'],
-            [['tableName', 'baseControllerClass', 'indexWidgetType', 'db'], 'required'],
+            [['nsModel', 'viewPath', 'queryNs', 'nsController', 'nsSearchModel', 'tableName', 'modelClass', 'searchModelClass', 'baseControllerClass','relNxN'], 'filter', 'filter' => 'trim'],
+            [['tableName', 'baseControllerClass', 'indexWidgetType'], 'required'],
             [['tableName'], 'match', 'pattern' => '/^(\w+\.)?([\w\*]+)$/', 'message' => 'Only word characters, and optionally an asterisk and/or a dot are allowed.'],
             [['tableName'], 'validateTableName'],
 //            [['searchModelClass'], 'compare', 'compareAttribute' => 'modelClass', 'operator' => '!==', 'message' => 'Search Model Class must not be equal to Model Class.'],
-            [['modelClass', 'baseControllerClass', 'searchModelClass', 'db', 'queryClass'], 'match', 'pattern' => '/^[\w\\\\]*$/', 'message' => 'Only word characters and backslashes are allowed.'],
+            [['modelClass', 'baseControllerClass', 'searchModelClass', 'queryClass'], 'match', 'pattern' => '/^[\w\\\\]*$/', 'message' => 'Only word characters and backslashes are allowed.'],
 //            [['modelClass'], 'validateClass', 'params' => ['extends' => BaseActiveRecord::className()]],
             [['baseControllerClass'], 'validateClass', 'params' => ['extends' => Controller::className()]],
-            [['db'], 'validateDb'],
             [['controllerClass'], 'match', 'pattern' => '/Controller$/', 'message' => 'Controller class name must be suffixed with "Controller".'],
             [['controllerClass'], 'match', 'pattern' => '/(^|\\\\)[A-Z][^\\\\]+Controller$/', 'message' => 'Controller class name must start with an uppercase letter.'],
 //            [['searchModelClass'], 'validateNewClass'],
@@ -115,7 +114,6 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'db' => 'Database Connection ID',
             'modelClass' => 'Model Class',
             'generateQuery' => 'Generate ActiveQuery',
             'queryNs' => 'ActiveQuery Namespace',
@@ -131,7 +129,8 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
             'expandable' => 'Expandable Index Grid View',
             'cancelable' => 'Add Cancel Button On Form',
             'pdf' => 'PDF Printable View',
-            'relNxN'=>'NxM Relations'
+            'relNxN'=>'NxM Relations',
+            'tableName' => 'Table Name*'
         ]);
     }
 
@@ -142,7 +141,6 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
     {
         return array_merge(parent::hints(), [
             'relNxN'=>'If you want to generate NxM relationships with Select2 and TabularForm, enter the name of the tables by separating them with a comma.',
-            'db' => 'This is the ID of the DB application component.',
             'tableName' => 'This is the name of the DB table that the new ActiveRecord class is associated with, e.g. <code>post</code>.
                 The table name may consist of the DB schema part if needed, e.g. <code>public.post</code>.
                 The table name may end with asterisk to match multiple table names, e.g. <code>tbl_*</code>
@@ -244,7 +242,6 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
     public function stickyAttributes()
     {
         return array_merge(parent::stickyAttributes(), [
-            'db',
             'skippedColumns',
             'hiddenColumns',
             'nameAttribute',
@@ -618,7 +615,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
                     }
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \\yii\\helpers\\ArrayHelper::map(\\$this->nsModel\\$rel[1]::find()->asArray()->orderBy(\\app\\models\\Professor::representingColumn())->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
+                'filter' => \\yii\\helpers\\ArrayHelper::map(\\$this->nsModel\\$rel[1]::find()->asArray()->orderBy($this->nsModel\\$rel[1]::representingColumn())->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
@@ -718,7 +715,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \\kartik\\widgets\\Select2::className(),
             'options' => [
-                'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy(\\app\\models\\Professor::representingColumn())->asArray()->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
+                'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy(\\app\\models\\$this->nsModel\\$rel[1]::representingColumn())->asArray()->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
                 'options' => ['placeholder' => " . $this->generateString('Choose ' . $humanize) . "],
             ],
             'columnOptions' => ['width' => '200px']
@@ -840,7 +837,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
 //            $pk = empty($this->tableSchema->primaryKey) ? $this->tableSchema->getColumnNames()[0] : $this->tableSchema->primaryKey[0];
             $fkClassFQ = "\\" . $this->nsModel . "\\" . $rel[1];
             $output = "\$form->field($model, '$attribute')->widget(\\kartik\\widgets\\Select2::classname(), [
-        'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy(\\app\\models\\Professor::representingColumn())->asArray()->all(), '$rel[4]', \\$this->nsModel\\$rel[1]::representingColumn()),
+        'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy(\\app\\models\\$this->nsModel\\$rel[1]::representingColumn())->asArray()->all(), '$rel[4]', \\$this->nsModel\\$rel[1]::representingColumn()),
         'options' => ['placeholder' => " . $this->generateString('Choose ' . $humanize) . "],
         'pluginOptions' => [
             'allowClear' => true

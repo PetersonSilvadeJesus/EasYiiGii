@@ -55,28 +55,6 @@ foreach ($relations as $name => $rel) {
     }
 }
 ?>
-<?php if($generator->getDbConnection()->driverName==='pgsql'): ?>
-<?php if($generator->getVariablesNxN()!=null):?>
-<?php foreach ($generator->getVariablesNxN() as $i):?>
-<?php foreach ($information->getRelationsCRUD($i,$generator->tableName) as $j=>$line):?>
-    <?= "<?php \n" ?>
-        $data=\yii\helpers\ArrayHelper::map(\app\models\<?= $generator->generateClassName($line['table_rel']) ?>::find()->orderBy(\app\models\<?= $generator->generateClassName($line['table_rel']) ?>::representingColumn())->all(),'<?=$line['column_related']?>',\app\models\<?= $generator->generateClassName($line['table_rel']) ?>::representingColumn());
-        echo $form->field($model, '<?=lcfirst($generator->generateClassName($i))?>')->widget(\kartik\widgets\Select2::classname(), [
-            'name' => '<?=lcfirst($generator->generateClassName($i))?>',
-            'data' => $data,
-            'options' => ['placeholder' => 'Select...',
-                'multiple'=> true,
-            ],
-            'pluginOptions' => [
-                'allowClear' => true
-            ],
-        ]);
-    <?= "?>" ?>
-<?php endforeach;?>
-<?php endforeach;?>
-<?php endif; ?>
-<?php endif; ?>
-
 
     <div class="form-group">
 <?php if($generator->saveAsNew): ?>
