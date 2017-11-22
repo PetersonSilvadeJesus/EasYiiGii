@@ -20,11 +20,31 @@ or add
 to the `require` section of your `composer.json` file.
 
 
-##Configuration
-Then you must add this code at your config\web.php.
+## Configuration
+
+1. Then you must add this code at your config\web.php.
 
 ```php
+'components'=>[
+	'user' => [
+		'class' => 'webvimark\modules\UserManagement\components\UserConfig',
+
+		// Comment this if you don't want to record user logins
+		'on afterLogin' => function($event) {
+				\webvimark\modules\UserManagement\models\UserVisitLog::newVisitor($event->identity->id);
+			}
+	],
+],
+
 'modules' => [
+      'user-management' => [
+            'class' => 'webvimark\modules\UserManagement\UserManagementModule',
+		'on beforeAction'=>function(yii\base\ActionEvent $event) {
+                  if ( $event->action->uniqueId == 'user-management/auth/login' ){
+                        $event->action->controller->layout = 'loginLayout.php';
+                  };
+            },
+	],
       'gridview' => [
           'class' => '\kartik\grid\Module',
       ],
@@ -37,11 +57,29 @@ See gridview settings on http://demos.krajee.com/grid#module
 
 See datecontrol settings on http://demos.krajee.com/datecontrol#module
 
+2. In your config/console.php (this is needed for migrations and working with console)
+
+```php
+'modules'=>[
+	'user-management' => [
+		'class' => 'webvimark\modules\UserManagement\UserManagementModule',
+	        'controllerNamespace'=>'vendor\webvimark\modules\UserManagement\controllers', // To prevent yii help from crashing
+	],
+],
+```
+
+3. Run migrations
+```php
+./yii migrate --migrationPath=vendor/webvimark/module-user-management/migrations/
+```
+
+See user-management settings on https://github.com/webvimark/user-management
+
 ## Usage :
 Go to your gii tools, and notice the new EasYii Gii Generator for models & CRUD
 
 
-#Features
+# Features
 ## Model :
 1. Generate representation columns(RepresentingColumn)
 2. Generate CPF/CNPJ validator
@@ -75,5 +113,5 @@ I'm open for any improvement
 5. mootensai(https://github.com/mootensai) for yii2-enhanced-gii(https://github.com/mootensai/yii2-enhanced-gii)
 
 
-##Developers
+# Developers
 1. thtmorais(https://github.com/thtmorais)
