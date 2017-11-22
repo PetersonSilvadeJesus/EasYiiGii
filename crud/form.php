@@ -4,7 +4,7 @@
 /* @var $generator yii\gii\generators\crud\Generator */
 ?>
 <?php
-echo $form->errorSummary($generator);
+//echo $form->errorSummary($generator);
 echo $form->field($generator, 'tableName');
 echo $form->field($generator, 'nsModel');
 echo $form->field($generator, 'modelClass');
@@ -22,7 +22,7 @@ echo $form->field($generator, 'baseControllerClass');
             <?= $form->field($generator, 'pluralize')->checkbox(); ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($generator, 'loggedUserOnly')->checkbox(); ?>
+            <?= $form->field($generator, 'userManagement')->checkbox(); ?>
         </div>
     </div>
     <div class="row">
@@ -30,7 +30,7 @@ echo $form->field($generator, 'baseControllerClass');
             <?= $form->field($generator, 'expandable')->checkbox(); ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($generator, 'pdf')->checkbox(); ?>
+            <?= $form->field($generator, 'export')->checkbox(); ?>
         </div>
     </div>
     <div class="row">
@@ -49,9 +49,13 @@ echo $form->field($generator, 'baseControllerClass');
             <?= $form->field($generator, 'enableI18N')->checkbox(); ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($generator, 'generateSearchModel')->checkbox();; ?>
+        </div>
+    </div>
 
 <?php
-echo $form->field($generator, 'generateSearchModel')->checkbox();
 echo $form->field($generator, 'nsSearchModel');
 echo $form->field($generator, 'searchModelClass');
 echo $form->field($generator, 'indexWidgetType')->dropDownList([

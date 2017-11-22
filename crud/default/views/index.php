@@ -53,7 +53,6 @@ if ($generator->indexWidgetType === 'grid'):
 ?>
 <?= "<?php \n" ?>
     $gridColumn = [
-        ['class' => 'yii\grid\SerialColumn'],
 <?php
     if ($generator->expandable):
 ?>
@@ -114,9 +113,9 @@ if ($generator->indexWidgetType === 'grid'):
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
         ],
-<?php if(!$generator->pdf) : ?>
+<?php if(!$generator->export) : ?>
         'export' => false,
-<?php endif; ?>
+<?php else: ?>
         // your toolbar can include the additional full export menu
         'toolbar' => [
             '{export}',
@@ -132,13 +131,9 @@ if ($generator->indexWidgetType === 'grid'):
                         '<li class="dropdown-header">Export All Data</li>',
                     ],
                 ],
-<?php if(!$generator->pdf):?>
-                'exportConfig' => [
-                    ExportMenu::FORMAT_PDF => false
-                ]
-<?php endif;?>
             ]) ,
         ],
+<?php endif;?>
     ]); ?>
 <?php 
 else: 
