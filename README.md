@@ -1,28 +1,28 @@
 # EasYii Gii
-EasyYii Gii (generator code Yii2) with Relation person to PostgreSQL
+EasyYii Gii (gerador de código Yii2) com interação aumentada com PosgreSQL
 
-## Installation
+## Instalação
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+É recomendado instalar esta extensão utilizando o [composer](http://getcomposer.org/download/).
 
-Either run
+Via comando
 
 ```bash
 composer require thtmorais/easyiigii
 ```
 
-or add
+ou adicione
 
 ```
 "thtmorais/easyiigii": "^1"
 ```
 
-to the `require` section of your `composer.json` file.
+na seção `require` de seu arquivo `composer.json`.
 
 
-## Configuration
+## Configuração
 
-1. Then you must add this code at your config\web.php.
+1. Adicione o código abaixo em config\web.php.
 
 ```php
 'components'=>[
