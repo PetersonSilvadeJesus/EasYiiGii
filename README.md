@@ -1,5 +1,5 @@
 # EasYii Gii
-EasyYii Gii (gerador de código Yii2) com interação aumentada com PosgreSQL
+EasyYii Gii (gerador de código Yii2) com interação aumentada com PostgreSQL
 
 ## Instalação
 
