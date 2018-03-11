@@ -22,7 +22,7 @@ na seção `require` de seu arquivo `composer.json`.
 
 ## Configuração
 
-1. Adicione o código abaixo em config\web.php.
+1. Adicione o código abaixo em `config\web.php`.
 
 ```php
 'components'=>[
