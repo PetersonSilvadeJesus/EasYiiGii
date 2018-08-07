@@ -45,11 +45,9 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     */
     public function behaviors(){
         return [
-<?php if($generator->userManagement == 1):?>
             'ghost-access'=> [
                 'class' => 'webvimark\modules\UserManagement\components\GhostAccessControl',
             ],
-<?php endif; ?>
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

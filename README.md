@@ -1,50 +1,30 @@
 # EasYii Gii
-EasyYii Gii (gerador de código Yii2) com interação aumentada com PostgreSQL
+EasyYii Gii (generator code Yii2) with Relation person to PostgreSQL
 
-## Instalação
+## Installation
 
-É recomendado instalar esta extensão utilizando o [composer](http://getcomposer.org/download/).
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Via comando
+Either run
 
 ```bash
 composer require thtmorais/easyiigii
 ```
 
-ou adicione
+or add
 
 ```
 "thtmorais/easyiigii": "^1"
 ```
 
-na seção `require` de seu arquivo `composer.json`.
+to the `require` section of your `composer.json` file.
 
 
-## Configuração
-
-1. Adicione o código abaixo em `config\web.php`.
+##Configuration
+Then you must add this code at your config\web.php.
 
 ```php
-'components'=>[
-	'user' => [
-		'class' => 'webvimark\modules\UserManagement\components\UserConfig',
-
-		// Comment this if you don't want to record user logins
-		'on afterLogin' => function($event) {
-				\webvimark\modules\UserManagement\models\UserVisitLog::newVisitor($event->identity->id);
-			}
-	],
-],
-
 'modules' => [
-      'user-management' => [
-            'class' => 'webvimark\modules\UserManagement\UserManagementModule',
-		'on beforeAction'=>function(yii\base\ActionEvent $event) {
-                  if ( $event->action->uniqueId == 'user-management/auth/login' ){
-                        $event->action->controller->layout = 'loginLayout.php';
-                  };
-            },
-	],
       'gridview' => [
           'class' => '\kartik\grid\Module',
       ],
@@ -57,29 +37,11 @@ See gridview settings on http://demos.krajee.com/grid#module
 
 See datecontrol settings on http://demos.krajee.com/datecontrol#module
 
-2. In your config/console.php (this is needed for migrations and working with console)
-
-```php
-'modules'=>[
-	'user-management' => [
-		'class' => 'webvimark\modules\UserManagement\UserManagementModule',
-	        'controllerNamespace'=>'vendor\webvimark\modules\UserManagement\controllers', // To prevent yii help from crashing
-	],
-],
-```
-
-3. Run migrations
-```php
-./yii migrate --migrationPath=vendor/webvimark/module-user-management/migrations/
-```
-
-See user-management settings on https://github.com/webvimark/user-management
-
 ## Usage :
 Go to your gii tools, and notice the new EasYii Gii Generator for models & CRUD
 
 
-# Features
+#Features
 ## Model :
 1. Generate representation columns(RepresentingColumn)
 2. Generate CPF/CNPJ validator
@@ -113,5 +75,5 @@ I'm open for any improvement
 5. mootensai(https://github.com/mootensai) for yii2-enhanced-gii(https://github.com/mootensai/yii2-enhanced-gii)
 
 
-# Developers
+##Developers
 1. thtmorais(https://github.com/thtmorais)
