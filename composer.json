@@ -23,7 +23,7 @@
         "kartik-v/yii2-builder": "*",
         "kartik-v/yii2-grid": "*",
         "kartik-v/yii2-widgets": "*",
-        "kartik-v/yii2-export": "*",
+        "kartik-v/yii2-export": "@dev",
         "kartik-v/yii2-datecontrol": "*",
         "webvimark/module-user-management": "*",
         "arogachev/yii2-many-to-many": "*",
