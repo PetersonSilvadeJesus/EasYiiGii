@@ -618,7 +618,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
                     }
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \\yii\\helpers\\ArrayHelper::map(\\$this->nsModel\\$rel[1]::find()->asArray()->orderBy(\\app\\models\\Professor::representingColumn())->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
+                'filter' => \\yii\\helpers\\ArrayHelper::map(\\$this->nsModel\\$rel[1]::find()->asArray()->orderBy(\\$this->nsModel\\$rel[1]::representingColumn())->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
@@ -718,7 +718,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \\kartik\\widgets\\Select2::className(),
             'options' => [
-                'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy(\\app\\models\\Professor::representingColumn())->asArray()->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
+                'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy($fkClassFQ::representingColumn())->asArray()->all(), '{$rel[self::REL_PRIMARY_KEY]}', \\$this->nsModel\\$rel[1]::representingColumn()),
                 'options' => ['placeholder' => " . $this->generateString('Choose ' . $humanize) . "],
             ],
             'columnOptions' => ['width' => '200px']
@@ -840,7 +840,7 @@ class Generator extends \thtmorais\easyiigii\BaseGenerator
 //            $pk = empty($this->tableSchema->primaryKey) ? $this->tableSchema->getColumnNames()[0] : $this->tableSchema->primaryKey[0];
             $fkClassFQ = "\\" . $this->nsModel . "\\" . $rel[1];
             $output = "\$form->field($model, '$attribute')->widget(\\kartik\\widgets\\Select2::classname(), [
-        'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy(\\app\\models\\Professor::representingColumn())->asArray()->all(), '$rel[4]', \\$this->nsModel\\$rel[1]::representingColumn()),
+        'data' => \\yii\\helpers\\ArrayHelper::map($fkClassFQ::find()->orderBy($fkClassFQ::representingColumn())->asArray()->all(), '$rel[4]', \\$this->nsModel\\$rel[1]::representingColumn()),
         'options' => ['placeholder' => " . $this->generateString('Choose ' . $humanize) . "],
         'pluginOptions' => [
             'allowClear' => true
