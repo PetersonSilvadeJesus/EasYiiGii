@@ -73,9 +73,9 @@ use <?= ltrim($generator->nsModel . '\\' . $modelClass, '\\') . (isset($modelAli
 <?php next($key);?>
 <?php $nome = key($key);?>
 <?php endif;?>
-                <?=$nome?>=>[
-                    'asc'=>[<?= $attr?>=>SORT_ASC],
-                    'desc'=>[<?= $attr?>=>SORT_DESC],
+                '<?=$nome?>'=>[
+                    'asc'=>['<?= $attr?>'=>SORT_ASC],
+                    'desc'=>['<?= $attr?>'=>SORT_DESC],
                 ],
 <?php endforeach;?>
             ]
