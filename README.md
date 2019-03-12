@@ -1,3 +1,5 @@
+# The project was abandoned, working on yii2-giix
+
 # EasYii Gii
 EasyYii Gii (generator code Yii2) with Relation person to PostgreSQL
 
