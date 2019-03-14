@@ -1,6 +1,6 @@
 <?php
 
-namespace thtmorais\easyiigii;
+namespace petersonsilva\easyiigii;
 
 
 class Informations

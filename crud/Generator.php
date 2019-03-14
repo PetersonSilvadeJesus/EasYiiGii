@@ -1,5 +1,5 @@
 <?php
-namespace thtmorais\easyiigii\crud;
+namespace petersonsilva\easyiigii\crud;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -11,7 +11,7 @@ use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
-use thtmorais\easyiigii\Informations;
+use petersonsilva\easyiigii\Informations;
 
 /**
  * Generates Relational CRUD
@@ -20,7 +20,7 @@ use thtmorais\easyiigii\Informations;
  * @author Yohanes Candrajaya <moo.tensai@gmail.com>
  * @since 2.0
  */
-class Generator extends \thtmorais\easyiigii\BaseGenerator
+class Generator extends \petersonsilva\easyiigii\BaseGenerator
 {
 
     public $nameAttribute = 'name, title, username';

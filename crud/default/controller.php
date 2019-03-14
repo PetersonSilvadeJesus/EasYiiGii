@@ -3,8 +3,8 @@
 use yii\helpers\StringHelper;
 
 $dbName = $generator->getDbConnection()->driverName;
-$myModel = new thtmorais\easyiigii\crud\Generator;
-$information = new \thtmorais\easyiigii\Informations();
+$myModel = new petersonsilva\easyiigii\crud\Generator;
+$information = new \petersonsilva\easyiigii\Informations();
 $controllerClass = StringHelper::basename($generator->controllerClass);
 $modelClass = StringHelper::basename($generator->modelClass);
 $searchModelClass = StringHelper::basename($generator->searchModelClass);

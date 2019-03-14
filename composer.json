@@ -41,6 +41,6 @@
         }
     },
     "extra": {
-        "bootstrap": "thtmorais\\easyiigii\\Bootstrap"
+        "bootstrap": "petersonsilva\\easyiigii\\Bootstrap"
     }
 }

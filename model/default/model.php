@@ -1,5 +1,5 @@
 <?php
-$information = new \thtmorais\easyiigii\Informations();
+$information = new \petersonsilva\easyiigii\Informations();
 $newRules = $information->newRules(strtolower($className));
 $dbName = $generator->getDbConnection()->driverName;
 /**
@@ -7,7 +7,7 @@ $dbName = $generator->getDbConnection()->driverName;
  */
 
 /* @var $this yii\web\View */
-/* @var $generator thtmorais\easyiigii\crud\Generator */
+/* @var $generator petersonsilva\easyiigii\crud\Generator */
 /* @var $tableName string full table name */
 /* @var $className string class name */
 /* @var $queryClassName string query class name */

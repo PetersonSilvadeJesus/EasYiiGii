@@ -1,15 +1,15 @@
 <?php
 
-namespace thtmorais\easyiigii\model;
+namespace petersonsilva\easyiigii\model;
 
 use Yii;
 use yii\db\ActiveQuery;
 use yii\gii\CodeFile;
 use yii\helpers\Json;
 use yii\helpers\Inflector;
-use thtmorais\easyiigii\Informations;
+use petersonsilva\easyiigii\Informations;
 
-class Generator extends \thtmorais\easyiigii\BaseGenerator {
+class Generator extends \petersonsilva\easyiigii\BaseGenerator {
 
     public $nsModel = 'app\models';
     public $nameAttribute = 'name, title, username';

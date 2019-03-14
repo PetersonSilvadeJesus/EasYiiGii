@@ -1,6 +1,6 @@
 <?php
 
-namespace thtmorais\easyiigii;
+namespace petersonsilva\easyiigii;
 
 use Yii;
 use yii\base\NotSupportedException;
