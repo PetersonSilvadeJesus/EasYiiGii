@@ -111,9 +111,8 @@ I'm open for any improvement
 3. schmunk42 (https://github.com/schmunk42) for bootstrap & model base & extension
 4. mdmunir (https://github.com/mdmunir) for JsBlock & Migration Generator (from https://github.com/deesoft/yii2-gii)
 5. mootensai (https://github.com/mootensai) for yii2-enhanced-gii (https://github.com/mootensai/yii2-enhanced-gii)
-
+6. thtmorais (https://github.com/thtmorais/easyiigii)
 
 # Developers
-1. thtmorais (https://github.com/thtmorais)
 2. petersonsilvadejesus (https://github.com/petersonsilvadejesus)
 
